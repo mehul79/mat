@@ -21,7 +21,7 @@ for s = 1:50
     z = cb * Xb;
     zjcj = cb * Y(:,1:n) - c;   % cb*Y - c   c = [c 0];
     Table=[zjcj z;Y]
-    if zjcj >= 0
+    if all(zjcj >= 0)
         disp('optimal sol achieved');
         Xb
         basic_variables = bv_index
@@ -29,7 +29,7 @@ for s = 1:50
         break
     else
         [a,EV] = min(zjcj);
-        if Y(:,EV) < 0
+        if all(Y(:,EV) < 0)
             disp("Unbounded solution")
             break
         else
