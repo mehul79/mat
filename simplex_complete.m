@@ -10,7 +10,6 @@ A = [1 2 0 1 0; 3 0 4 0 1];
 m = size(A,1);
 n = size(A,2);
 
-%%
 bv_index = n-m+1:1:n;
 Y = [A b];
 
@@ -19,7 +18,7 @@ for s = 1:50
     cb = c(bv_index);
     Xb = Y(:,end);
     z = cb * Xb;
-    zjcj = cb * Y(:,1:n) - c;   % cb*Y - c   c = [c 0];
+    zjcj = cb * Y(:,1:n) - c;   
     Table=[zjcj z;Y]
     if all(zjcj >= 0)
         disp('optimal sol achieved');

@@ -28,7 +28,7 @@ maxiter = 4;
 tol = 10^(-3);     
 iter = 0;          
 
-x = [1; 1];        
+% x = [1; 1];        
 
 while norm(gradx(x0)) > tol && iter < maxiter
     % X = [x; x0];           
